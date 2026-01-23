@@ -28,9 +28,23 @@
             <h1>Something Fresh is Hatching</h1>
             <p>We are building a new digital home for our farm. Stay tuned for the freshest updates!</p>
 
-            <div class="newsletter-mockup">
-                <input type="email" placeholder="Enter your email for updates" disabled>
-                <button type="button">Notify Me</button>
+            <div class="countdown-container">
+                <div class="time-segment">
+                    <span class="time" id="days">00</span>
+                    <span class="label">Days</span>
+                </div>
+                <div class="time-segment">
+                    <span class="time" id="hours">00</span>
+                    <span class="label">Hours</span>
+                </div>
+                <div class="time-segment">
+                    <span class="time" id="minutes">00</span>
+                    <span class="label">Minutes</span>
+                </div>
+                <div class="time-segment">
+                    <span class="time" id="seconds">00</span>
+                    <span class="label">Seconds</span>
+                </div>
             </div>
         </div>
     </main>
@@ -38,6 +52,35 @@
     <footer>
         <p>&copy; 2026 Sunrise Egg Farms. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Set the date we're counting down to (10 days from now for demo)
+        const countDownDate = new Date();
+        countDownDate.setDate(countDownDate.getDate() + 10);
+
+        const daysSpan = document.getElementById("days");
+        const hoursSpan = document.getElementById("hours");
+        const minutesSpan = document.getElementById("minutes");
+        const secondsSpan = document.getElementById("seconds");
+
+        function updateTimer() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            daysSpan.innerText = days < 10 ? "0" + days : days;
+            hoursSpan.innerText = hours < 10 ? "0" + hours : hours;
+            minutesSpan.innerText = minutes < 10 ? "0" + minutes : minutes;
+            secondsSpan.innerText = seconds < 10 ? "0" + seconds : seconds;
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer(); // Initial call
+    </script>
 </body>
 
 </html>
