@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Egg, Sun, ShieldCheck, Globe, Leaf, CheckCircle2, TrendingUp, Award, Clock } from "lucide-react";
 import { AnimatedSection, StaggerChildren, StaggerItem } from "@/components/AnimatedSection";
+import { ReviewsSection } from "@/components/ReviewsSection";
 import { useRef } from "react";
 
 export default function Home() {
@@ -448,6 +449,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Trust & Google Reviews Scroller */}
+      <ReviewsSection />
 
     </div>
   );

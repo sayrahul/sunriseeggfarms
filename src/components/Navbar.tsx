@@ -104,7 +104,7 @@ export function Navbar() {
                 <Image src="/images/logo.png" alt="Sunrise Egg Farms Logo" fill className="object-contain w-auto h-auto" priority />
               </div>
               <div className="flex items-center justify-start ml-1 shrink-0">
-                <img src="/images/logo-text.png" alt="Sunrise Egg Farms Text" className="h-5 sm:h-7 md:h-8 w-auto object-contain object-left group-hover:opacity-90 transition-opacity" />
+                <img src="/images/logo-text.png" alt="Sunrise Egg Farms Text" className="h-9 sm:h-10 md:h-11 w-auto object-contain object-left group-hover:opacity-90 transition-opacity" />
               </div>
             </Link>
 
