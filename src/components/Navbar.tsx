@@ -78,13 +78,11 @@ export function Navbar() {
           <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 group shrink-0 min-w-0">
-              <div className="relative w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center transition-transform group-hover:scale-105">
-                <Image src="/images/logo.png" alt="Sunrise Egg Farms Logo" fill className="object-contain" priority />
+              <div className="relative w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center transition-transform group-hover:scale-105 shrink-0">
+                <Image src="/images/logo.png" alt="Sunrise Egg Farms Logo" fill className="object-contain w-auto h-auto" priority />
               </div>
-              <div className="flex items-center gap-1.5 whitespace-nowrap overflow-hidden">
-                <span className="font-black text-[1rem] sm:text-[1.05rem] md:text-2xl tracking-tight text-slate-900 group-hover:text-brand transition-colors leading-none">
-                  Sunrise Egg Farms
-                </span>
+              <div className="flex items-center justify-start ml-1 shrink-0">
+                <img src="/images/logo-text.png" alt="Sunrise Egg Farms Text" className="h-5 sm:h-7 md:h-8 w-auto object-contain object-left group-hover:opacity-90 transition-opacity" />
               </div>
             </Link>
 

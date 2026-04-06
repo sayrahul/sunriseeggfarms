@@ -43,20 +43,27 @@ export default function Home() {
 
 
       {/* Hero Section */}
-      <section className="relative min-h-[72vh] lg:min-h-[68vh] flex items-center justify-center overflow-hidden pt-24 lg:pt-28 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <section className="relative min-h-[72vh] lg:min-h-[68vh] flex items-center justify-center overflow-hidden pt-24 lg:pt-28 bg-slate-900">
         
         {/* Enhanced Background Layers */}
         <div className="absolute inset-0">
+          <Image 
+            src="/images/farm-eggs.jpg" 
+            alt="Hero Background" 
+            fill 
+            className="object-cover opacity-40 mix-blend-overlay"
+            priority
+          />
           {/* Animated gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-amber-500/5 to-yellow-500/10 animate-pulse"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-amber-500/5 to-yellow-500/10 animate-pulse mix-blend-overlay"></div>
           
           {/* Floating orbs for visual interest */}
           <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-brand/5 rounded-full blur-3xl animate-float"></div>
           <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-amber-400/5 rounded-full blur-3xl animate-float-delayed"></div>
           
           {/* Subtle pattern overlay */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.3)_1px,transparent_0)] bg-[length:50px_50px]"></div>
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.4)_1px,transparent_0)] bg-[length:50px_50px]"></div>
           </div>
         </div>
 
@@ -113,13 +120,16 @@ export default function Home() {
         <AnimatedSection>
           <div className="w-full h-[350px] md:h-[600px] rounded-[2.5rem] overflow-hidden shadow-2xl relative border-4 border-white/40 ring-1 ring-slate-100 group bg-slate-900">
             <Image 
-              src="/assets/farm-hero.jpg" 
-              alt="High quality golden eggs" 
+              src="/images/farm-eggs.jpg" 
+              alt="Quality farm eggs image" 
               fill 
-              className="object-cover group-hover:scale-110 transition-transform duration-[1.5s] ease-in-out opacity-80 mix-blend-luminosity" 
+              className="object-cover group-hover:scale-110 transition-transform duration-[1.5s] ease-in-out"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+            <div className="absolute inset-0 bg-black/40"></div>
             <div className="absolute inset-x-0 bottom-0 p-8 md:p-16">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/20 text-amber-100 text-xs uppercase tracking-[0.28em] font-semibold mb-4 shadow-lg shadow-amber-500/10">
+                High quality golden eggs
+              </span>
               <h3 className="text-white text-4xl md:text-5xl font-black drop-shadow-md">Uncompromising Quality. Daily.</h3>
             </div>
           </div>
@@ -286,66 +296,56 @@ export default function Home() {
       </section>
 
       {/* Call To Action Banner */}
-      <section className="py-32 relative overflow-hidden mt-12 mb-8 md:mb-12 md:mx-6 md:rounded-3xl shadow-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 border border-slate-700">
-        {/* Background elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,rgba(245,158,11,0.1),transparent_50%)]"></div>
-          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(ellipse_at_bottom,rgba(59,130,246,0.1),transparent_50%)]"></div>
-          
-          {/* Animated particles */}
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-brand rounded-full animate-ping opacity-60"></div>
-          <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-blue-400 rounded-full animate-ping opacity-40 animation-delay-1000"></div>
-          <div className="absolute top-1/2 left-3/4 w-1.5 h-1.5 bg-amber-400 rounded-full animate-ping opacity-50 animation-delay-2000"></div>
-        </div>
-        
-        <div className="container relative z-10 px-4 md:px-16 max-w-6xl">
-          <AnimatedSection>
-            <div className="text-center mb-12">
-              <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 mb-8">
+      <section className="py-24 relative overflow-hidden mt-12 mb-8">
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" />
+        <div className="absolute inset-0 opacity-70 bg-[radial-gradient(circle_at_top_left,rgba(245,158,11,0.18),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(59,130,246,0.15),transparent_25%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.06),transparent_20%)]" />
+
+        <div className="container relative z-10 mx-auto max-w-6xl px-4 md:px-6">
+          <div className="relative rounded-[2rem] border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl shadow-slate-950/30 overflow-hidden">
+            <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-brand/10 blur-3xl opacity-60" />
+            <div className="absolute -bottom-16 right-1/4 w-72 h-72 rounded-full bg-blue-400/10 blur-3xl opacity-50" />
+
+            <div className="relative px-6 py-16 md:px-12 md:py-20 text-center">
+              <div className="inline-flex items-center justify-center gap-3 px-6 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 mb-8 mx-auto">
                 <Award className="w-5 h-5 text-brand" />
                 <span className="text-white font-semibold text-sm">Trusted by Global Partners</span>
               </div>
-              
-              <h2 className="text-5xl md:text-7xl font-black mb-8 leading-[1.1] text-white drop-shadow-2xl max-w-4xl mx-auto tracking-tighter">
-                Partner with the Leaders in <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand via-orange-300 to-amber-200">Quality Eggs.</span>
+
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white mb-6 leading-tight max-w-4xl mx-auto">
+                Partner with the leaders in <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand via-orange-300 to-amber-200">quality eggs</span>.
               </h2>
-              
-              <p className="text-xl md:text-2xl text-slate-300 mb-12 leading-relaxed max-w-3xl mx-auto font-medium drop-shadow-lg">
-                Whether you&apos;re a local distributor or an international wholesaler, Sunrise Egg Farms guarantees the volume, quality, and hygiene you demand. Join our network of satisfied partners worldwide.
+
+              <p className="max-w-3xl mx-auto text-lg md:text-xl text-slate-300 leading-relaxed font-medium mb-10">
+                Whether you’re a local distributor or an international wholesaler, Sunrise Egg Farms guarantees the volume, quality, and hygiene you demand. Join our network of satisfied partners worldwide.
               </p>
-            </div>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link href="/contact" className="group w-full sm:w-auto px-12 py-6 bg-gradient-to-r from-brand to-amber-500 hover:from-brand-dark hover:to-orange-600 text-white rounded-2xl font-black text-2xl transition-all hover:scale-105 shadow-[0_8px_30px_rgba(245,158,11,0.5)] hover:shadow-[0_8px_40px_rgba(245,158,11,0.7)] flex items-center justify-center gap-4 border border-white/20 backdrop-blur-sm">
-                Get in Touch Today 
-                <ArrowRight className="w-8 h-8 text-white group-hover:translate-x-2 transition-transform" />
-              </Link>
-              
-              <Link href="/about" className="group w-full sm:w-auto px-12 py-6 bg-white/10 hover:bg-white/20 text-white rounded-2xl font-bold text-xl transition-all hover:scale-105 flex items-center justify-center gap-3 shadow-lg border border-white/30 backdrop-blur-xl hover:border-white/50">
-                Learn More About Us
-                <Globe className="w-6 h-6 group-hover:rotate-12 transition-transform" />
-              </Link>
-            </div>
-            
-            {/* Trust indicators */}
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-black text-brand mb-2">500+</div>
-                <div className="text-slate-400 text-sm font-medium">Happy Partners</div>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+                <Link href="/contact" className="group inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-brand to-amber-500 px-10 py-4 text-lg font-black text-white shadow-[0_18px_40px_-20px_rgba(245,158,11,0.9)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_-18px_rgba(245,158,11,0.9)]">
+                  Get in Touch Today
+                  <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
+                </Link>
+                <Link href="/about" className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/20 bg-white/10 px-10 py-4 text-lg font-semibold text-white transition-all duration-300 hover:bg-white/20 hover:scale-105">
+                  Learn More About Us
+                  <Globe className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" />
+                </Link>
               </div>
-              <div>
-                <div className="text-3xl font-black text-brand mb-2">50+</div>
-                <div className="text-slate-400 text-sm font-medium">Countries Served</div>
-              </div>
-              <div>
-                <div className="text-3xl font-black text-brand mb-2">10M+</div>
-                <div className="text-slate-400 text-sm font-medium">Eggs Monthly</div>
-              </div>
-              <div>
-                <div className="text-3xl font-black text-brand mb-2">99.9%</div>
-                <div className="text-slate-400 text-sm font-medium">Quality Rate</div>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-left md:text-center">
+                {[
+                  { value: "500+", label: "Happy Partners" },
+                  { value: "50+", label: "Countries Served" },
+                  { value: "10M+", label: "Eggs Monthly" },
+                  { value: "99.9%", label: "Quality Rate" },
+                ].map((stat) => (
+                  <div key={stat.label} className="rounded-3xl bg-white/10 border border-white/10 p-6 backdrop-blur-xl hover:bg-white/15 transition-all duration-300">
+                    <div className="text-3xl md:text-4xl font-black text-brand mb-2">{stat.value}</div>
+                    <div className="text-sm uppercase tracking-[0.26em] text-slate-300 font-semibold">{stat.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
-          </AnimatedSection>
+          </div>
         </div>
       </section>
 

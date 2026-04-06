@@ -10,18 +10,18 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-3 bg-white/5 w-fit pr-4 rounded-2xl p-2 border border-white/10 hover:bg-white/10 transition-all duration-300 hover:scale-105 backdrop-blur-sm">
-              <div className="relative w-12 h-12 flex items-center justify-center bg-white rounded-2xl shadow-lg">
-                <Image src="/images/logo.png" alt="Sunrise Egg Farms" width={36} height={36} className="object-contain" />
+            <Link href="/" className="flex items-center gap-3 bg-white w-fit pr-5 rounded-2xl p-2 shadow-lg hover:bg-slate-50 transition-all duration-300 hover:scale-105">
+              <div className="relative w-12 h-12 flex items-center justify-center bg-transparent shrink-0">
+                <Image src="/images/logo.png" alt="Sunrise Egg Farms" width={40} height={40} className="object-contain w-auto h-auto" />
               </div>
-              <span className="font-bold tracking-tight text-white text-lg">
-                Sunrise Egg Farms
-              </span>
+              <div className="flex items-center justify-start border-l border-slate-200 pl-3 shrink-0">
+                <img src="/images/logo-text.png" alt="Sunrise Egg Farms Text Logo" className="h-5 md:h-6 w-auto object-contain object-left" />
+              </div>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
               Providing premium, hygienic, and nutritious eggs with sustainable and zero-waste farming practices.
             </p>
-            
+
             {/* Social proof */}
             <div className="flex items-center gap-4 pt-4">
               <div className="flex items-center gap-2 text-slate-400 text-sm">
@@ -49,6 +49,8 @@ export function Footer() {
               ))}
             </ul>
           </div>
+
+
 
           {/* Contact Us */}
           <div className="lg:col-span-2">
@@ -84,10 +86,10 @@ export function Footer() {
               <Link href="#" className="text-slate-400 hover:text-brand transition-colors font-medium">Sitemap</Link>
             </div>
           </div>
-          
+
           <div className="flex justify-center items-center">
             <p className="text-sm text-slate-500 font-medium">
-              Design and Developed by <a href="#" target="_blank" rel="noopener noreferrer" className="text-brand font-bold hover:text-amber-400 transition-colors tracking-wide">ProVenture Digital Agency</a>
+              Design and Developed by <a href="https://www.proventure.in/" target="_blank" rel="noopener noreferrer" className="text-brand font-bold hover:text-amber-400 transition-colors tracking-wide">ProVenture Digital Agency</a>
             </p>
           </div>
         </div>
