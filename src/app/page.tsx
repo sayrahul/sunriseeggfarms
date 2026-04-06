@@ -118,26 +118,26 @@ export default function Home() {
       {/* Stunning Intro Image Break */}
       <section className="relative z-20 -mt-16 mb-24 container px-4 md:px-6">
         <AnimatedSection>
-          <div className="w-full h-[350px] md:h-[600px] rounded-[2.5rem] overflow-hidden shadow-2xl relative border-4 border-white/40 ring-1 ring-slate-100 group bg-slate-900">
+          <div className="w-full h-[450px] md:h-[750px] rounded-[2.5rem] overflow-hidden shadow-2xl relative border-4 border-white/40 ring-1 ring-slate-100 group bg-slate-900">
             <Image 
               src="/images/farm-eggs.jpg" 
               alt="Quality farm eggs image" 
               fill 
               className="object-cover group-hover:scale-110 transition-transform duration-[1.5s] ease-in-out"
             />
-            <div className="absolute inset-0 bg-black/40"></div>
-            <div className="absolute inset-x-0 bottom-0 p-8 md:p-16">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/20 text-amber-100 text-xs uppercase tracking-[0.28em] font-semibold mb-4 shadow-lg shadow-amber-500/10">
+            <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+            <div className="absolute inset-x-0 bottom-0 p-6 md:p-10 flex flex-col justify-end">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/20 text-amber-100 text-xs uppercase tracking-[0.28em] font-semibold mb-4 shadow-lg shadow-amber-500/10 w-fit">
                 High quality golden eggs
               </span>
-              <h3 className="text-white text-4xl md:text-5xl font-black drop-shadow-md">Uncompromising Quality. Daily.</h3>
+              <h3 className="text-white text-4xl md:text-5xl lg:text-6xl font-black drop-shadow-md">Uncompromising Quality. Daily.</h3>
             </div>
           </div>
         </AnimatedSection>
       </section>
 
       {/* Feature Cards (Modern Glassmorphism Design) */}
-      <section className="mb-32 container px-4 md:px-6 relative z-10">
+      <section className="mb-12 container px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
           <motion.div 
@@ -207,7 +207,7 @@ export default function Home() {
       </section>
 
       {/* Interactive Process / Farm-to-Table */}
-      <section className="py-32 relative overflow-hidden z-10 bg-gradient-to-b from-white via-slate-50/50 to-white">
+      <section className="py-16 lg:py-20 relative overflow-hidden z-10 bg-gradient-to-b from-white via-slate-50/50 to-white">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col lg:flex-row gap-16 items-center mb-24">
             <AnimatedSection className="lg:w-1/2">
