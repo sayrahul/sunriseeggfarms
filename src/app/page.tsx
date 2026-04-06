@@ -43,7 +43,7 @@ export default function Home() {
 
 
       {/* Hero Section */}
-      <section className="relative min-h-[72vh] lg:min-h-[68vh] flex items-center justify-center overflow-hidden pt-24 lg:pt-28 bg-slate-900">
+      <section className="relative min-h-[72vh] lg:min-h-[68vh] flex flex-col justify-center overflow-hidden pt-24 pb-32 lg:pt-28 lg:pb-40 bg-slate-900">
         
         {/* Enhanced Background Layers */}
         <div className="absolute inset-0">
@@ -108,7 +108,7 @@ export default function Home() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-20 md:bottom-24 left-1/2 transform -translate-x-1/2 animate-bounce">
           <div className="w-5 h-9 border-2 border-white/30 rounded-full flex justify-center">
             <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
           </div>
@@ -253,7 +253,7 @@ export default function Home() {
                 <div className="absolute top-4 right-4 w-16 h-16 bg-brand/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/20 z-20">
                   <CheckCircle2 className="w-8 h-8 text-white" />
                 </div>
-                <div className="absolute top-1/2 left-4 w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center backdrop-blur-sm border border-white/20 z-20">
+                <div className="absolute top-8 left-8 w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center backdrop-blur-sm border border-white/20 z-20">
                   <Leaf className="w-6 h-6 text-white" />
                 </div>
               </div>
