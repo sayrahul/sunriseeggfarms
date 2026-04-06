@@ -121,22 +121,22 @@ export function Navbar() {
       </header>
 
       {/* Mobile bottom navigation */}
-      <div className="fixed inset-x-0 bottom-0 z-40 lg:hidden bg-slate-950/95 border-t border-slate-200/10 backdrop-blur-xl shadow-[0_-18px_40px_-20px_rgba(15,23,42,0.45)]">
-        <nav className="container mx-auto px-2 py-2 overflow-x-auto">
-          <ul className="flex items-center gap-2 min-w-full">
+      <div className="fixed inset-x-0 bottom-0 z-40 lg:hidden bg-slate-950/95 border-t border-slate-200/10 backdrop-blur-xl shadow-[0_-18px_40px_-20px_rgba(15,23,42,0.45)] pb-safe">
+        <nav className="w-full px-1 py-2 sm:px-2 max-w-full">
+          <ul className="flex items-center justify-between w-full gap-1 sm:gap-2">
             {mobileBottomLinks.map((item) => {
               const isActive = pathname === item.href;
               const Icon = item.Icon;
               return (
-                <li key={item.name} className="flex-1 min-w-[90px]">
+                <li key={item.name} className="flex-1 flex justify-center">
                   <Link
                     href={item.href}
-                    className={`flex flex-col items-center justify-center gap-1 rounded-3xl px-3 py-2 text-center transition-all duration-200 ${
+                    className={`flex flex-col items-center justify-center gap-1 rounded-2xl sm:rounded-3xl w-full py-2 px-1 text-center transition-all duration-200 ${
                       isActive ? "bg-white/10 text-white" : "text-slate-300 hover:bg-white/10 hover:text-white"
                     }`}
                   >
-                    <Icon className="w-5 h-5" />
-                    <span className="text-[11px] font-semibold leading-none">{item.name}</span>
+                    <Icon className="w-5 h-5 sm:w-5 sm:h-5" />
+                    <span className="text-[10px] sm:text-[11px] font-semibold leading-none truncate w-full px-0.5">{item.name}</span>
                   </Link>
                 </li>
               );

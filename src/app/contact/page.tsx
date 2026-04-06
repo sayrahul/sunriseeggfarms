@@ -27,9 +27,16 @@ export default function Contact() {
 
   return (
     <div className="py-24 max-w-7xl mx-auto px-4 md:px-6">
-      <AnimatedSection className="text-center mb-16 max-w-3xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-dark mb-6">Contact <span className="text-brand">Us</span></h1>
-        <p className="text-lg text-slate-600">
+      <AnimatedSection className="text-center mb-20 flex flex-col items-center">
+        <h1 className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 mb-6">
+          <span className="text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 tracking-tight dark:text-white">
+            Contact
+          </span>
+          <span className="text-5xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand via-orange-500 to-amber-400 tracking-tighter drop-shadow-sm leading-none pb-2">
+            Us
+          </span>
+        </h1>
+        <p className="text-lg md:text-xl text-slate-600 dark:text-slate-300 font-medium max-w-2xl mx-auto leading-relaxed">
           Get in touch with our team for bulk orders, export inquiries, or any general questions. We are here to help.
         </p>
       </AnimatedSection>
