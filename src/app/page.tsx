@@ -215,36 +215,136 @@ export default function Home() {
                 <span className="w-16 h-1.5 bg-gradient-to-r from-brand to-amber-400 rounded-full shadow-lg"></span>
                 <h2 className="text-brand font-black uppercase tracking-widest text-sm">The Sunrise Process</h2>
               </div>
-              <h3 className="text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 leading-[1.1] tracking-tighter drop-shadow-sm mb-8">
-                From Farm to Table with <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-brand via-orange-500 to-amber-400">Absolute Precision.</span>
+              <h3 className="flex flex-col gap-2 mb-10">
+                <span className="text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 tracking-tight leading-[1.05]">
+                  From Farm to Table
+                </span>
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-1">
+                  <span className="text-3xl lg:text-4xl font-serif italic text-slate-400 font-medium">with</span>
+                  <span className="text-5xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand via-orange-500 to-amber-400 tracking-tighter drop-shadow-sm leading-tight pb-2">
+                    Absolute Precision.
+                  </span>
+                </div>
               </h3>
-              <p className="text-slate-600 text-xl leading-relaxed font-medium max-w-xl mb-8">
+              <p className="text-slate-600 text-lg md:text-xl leading-relaxed font-medium max-w-xl mb-8">
                 We believe that premium eggs are the result of rigorous processes. Every step, from the formulation of chicken feed to the final packaging, is meticulously monitored and automated.
               </p>
               
-              {/* Process stats */}
-              <div className="grid grid-cols-3 gap-6 mt-12">
-                <div className="text-center">
-                  <div className="text-4xl font-black text-brand mb-2">24/7</div>
-                  <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">Monitoring</div>
+              {/* Professional Editorial Process Stats */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12 border-t border-slate-200/80 pt-10">
+                <div className="flex flex-col items-start border-l-[3px] border-amber-500 pl-5">
+                  <div className="text-4xl md:text-5xl font-black text-slate-900 mb-1 drop-shadow-sm tracking-tight">24/7</div>
+                  <div className="text-xs md:text-sm font-bold text-amber-600 uppercase tracking-[0.2em]">Monitoring</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-4xl font-black text-brand mb-2">100%</div>
-                  <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">Automated</div>
+                <div className="flex flex-col items-start border-l-[3px] border-orange-500 pl-5">
+                  <div className="text-4xl md:text-5xl font-black text-slate-900 mb-1 drop-shadow-sm tracking-tight">100%</div>
+                  <div className="text-xs md:text-sm font-bold text-orange-600 uppercase tracking-[0.2em]">Automated</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-4xl font-black text-brand mb-2">0%</div>
-                  <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">Waste</div>
+                <div className="flex flex-col items-start border-l-[3px] border-brand pl-5">
+                  <div className="text-4xl md:text-5xl font-black text-slate-900 mb-1 drop-shadow-sm tracking-tight">0%</div>
+                  <div className="text-xs md:text-sm font-bold text-brand uppercase tracking-[0.2em]">Waste</div>
                 </div>
               </div>
             </AnimatedSection>
             
             <AnimatedSection delay={0.3} className="lg:w-1/2 w-full">
               <div className="relative h-[500px] w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white/60 bg-slate-900 group">
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent z-10"></div>
-                <div className="absolute inset-x-0 bottom-0 p-8 md:p-12 z-20">
-                  <h3 className="text-white text-4xl md:text-5xl font-black drop-shadow-lg mb-4">Uncompromising Quality. Daily.</h3>
-                  <p className="text-slate-200 text-lg font-medium drop-shadow-md max-w-md">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent z-10 pointer-events-none"></div>
+                
+                {/* Advanced SVG Animation: Automated Egg Scanning */}
+                <div className="absolute inset-0 overflow-hidden flex items-center justify-center z-0 group-hover:scale-105 transition-transform duration-[2s]">
+                  {/* Subtle Blueprint Grid */}
+                  <div className="absolute inset-0 opacity-20 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:30px_30px]"></div>
+                  
+                  <div className="relative w-64 h-64 flex items-center justify-center -translate-y-12 perspective-1000">
+                    {/* Glowing Pedestal */}
+                    <motion.div 
+                      className="absolute bottom-0 w-40 h-10 bg-gradient-to-r from-transparent via-brand/30 to-transparent rounded-[50%] blur-md"
+                      animate={{ scale: [1, 1.25, 1], opacity: [0.4, 0.8, 0.4] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    />
+
+                    {/* The Premium 3D Egg SVG */}
+                    <motion.svg 
+                      width="120" 
+                      height="120" 
+                      viewBox="0 0 36 36" 
+                      className="z-10 drop-shadow-[0_10px_25px_rgba(245,158,11,0.4)] group-hover:drop-shadow-[0_15px_35px_rgba(245,158,11,0.6)] transition-all duration-700"
+                      animate={{ y: [-8, 8, -8] }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      <defs>
+                        {/* 3D Radial Lighting Effect */}
+                        <radialGradient id="premiumEggGrad" cx="35%" cy="30%" r="70%">
+                          <stop offset="0%" stopColor="#FFFFFF" />
+                          <stop offset="20%" stopColor="#FDE68A" />
+                          <stop offset="65%" stopColor="#D97706" />
+                          <stop offset="100%" stopColor="#78350f" />
+                        </radialGradient>
+                      </defs>
+                      {/* Mathematically Perfected Egg Path */}
+                      <path 
+                        d="M23.142 3.403C21.492 1.899 19.712 1 18 1C12.375 1 6 10.611 6 20c0 .975.079 1.899.202 2.791C7.261 30.484 12.623 35 18 35c6 0 12-5.611 12-15c0-6.531-3.086-13.161-6.858-16.597z" 
+                        fill="url(#premiumEggGrad)"
+                      />
+                    </motion.svg>
+
+                    {/* Outer Scanning Ring (Gold) */}
+                    <motion.div 
+                      className="absolute w-56 h-56 border border-brand/50 rounded-full border-t-amber-400 border-l-transparent z-20 mix-blend-screen"
+                      style={{ transformOrigin: "center center", transformStyle: "preserve-3d" }}
+                      animate={{ rotateX: [75, 75], rotateZ: [0, 360] }}
+                      transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                    />
+                    
+                    {/* Inner Analytical Ring (Emerald) */}
+                    <motion.div 
+                      className="absolute w-44 h-44 border border-emerald-400/30 rounded-full border-b-emerald-400/80 border-r-transparent z-0 mix-blend-screen"
+                      style={{ transformOrigin: "center center", transformStyle: "preserve-3d" }}
+                      animate={{ rotateX: [70, 70], rotateZ: [360, 0] }}
+                      transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                    />
+
+                    {/* Vertical Sweeping Laser */}
+                    <motion.div 
+                      className="absolute left-1/2 -translate-x-1/2 w-48 h-0.5 bg-gradient-to-r from-transparent via-amber-400 to-transparent shadow-[0_0_20px_#F59E0B] z-30"
+                      animate={{ top: ["10%", "90%", "10%"] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    />
+                    
+                    {/* Floating Data Particles */}
+                    <div className="absolute inset-0 z-20">
+                      {[...Array(6)].map((_, i) => (
+                         <motion.div
+                           key={i}
+                           className="absolute rounded-sm bg-emerald-400 shadow-[0_0_5px_#34d399]"
+                           style={{
+                             width: i % 2 === 0 ? '6px' : '3px',
+                             height: i % 2 === 0 ? '2px' : '3px',
+                           }}
+                           initial={{ opacity: 0, scale: 0 }}
+                           animate={{ 
+                             opacity: [0, 1, 0], 
+                             y: [0, -30 - Math.random() * 40],
+                             x: (Math.random() - 0.5) * 80
+                           }}
+                           transition={{ 
+                             duration: 2 + Math.random() * 2, 
+                             repeat: Infinity, 
+                             delay: Math.random() * 2,
+                             ease: "easeOut"
+                           }}
+                         />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="absolute inset-x-0 bottom-0 p-8 md:p-10 lg:p-12 z-20">
+                  <h3 className="text-white text-4xl md:text-5xl font-black drop-shadow-2xl mb-4 relative">
+                    Uncompromising<br/>Quality. Daily.
+                  </h3>
+                  <p className="text-slate-200 text-lg md:text-xl font-medium drop-shadow-md max-w-md relative">
                     Our automated systems ensure every egg meets the highest standards of quality and safety.
                   </p>
                 </div>
