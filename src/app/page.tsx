@@ -1,48 +1,16 @@
-"use client";
-
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Egg, Sun, ShieldCheck, Globe, Leaf, CheckCircle2, TrendingUp, Award, Clock } from "lucide-react";
-import { AnimatedSection, StaggerChildren, StaggerItem } from "@/components/AnimatedSection";
+import { ArrowRight, Egg, Sun, Globe, Award } from "lucide-react";
+import { AnimatedSection } from "@/components/AnimatedSection";
 import { ReviewsSection } from "@/components/ReviewsSection";
-import { useRef } from "react";
+import { ScrollBackground } from "@/components/ScrollBackground";
+import { ProcessAnimation } from "@/components/ProcessAnimation";
+import { FeaturesGrid } from "@/components/FeaturesGrid";
+import { StepsGrid } from "@/components/StepsGrid";
 
 export default function Home() {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
-
-  // Rising Egg Motif Transform
-  const eggSpring = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
-  const eggY = useTransform(eggSpring, [0, 1], ["100vh", "-20vh"]);
-  const eggScale = useTransform(eggSpring, [0, 0.5, 1], [0.5, 1, 1.2]);
-  const eggRotate = useTransform(eggSpring, [0, 1], [0, 360]);
-
-  // Global Page Gradient Progress
-  const gradientOverlayOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0.8, 1]);
-
   return (
-    <div ref={containerRef} className="relative flex flex-col min-h-screen pb-16 md:pb-0 font-sans overflow-hidden">
-      
-      {/* Subtle Sky Gradient Background */}
-      <div className="fixed inset-0 z-[-2] bg-gradient-to-b from-orange-50 via-amber-50 to-sky-100 transition-colors duration-1000"></div>
-      <motion.div 
-        className="fixed inset-0 z-[-1] bg-gradient-to-b from-sky-50 via-sky-100 to-blue-50 pointer-events-none"
-        style={{ opacity: gradientOverlayOpacity }}
-      ></motion.div>
-
-      {/* Persistent Rising Egg Scroll Motif */}
-      <motion.div 
-        className="fixed left-[5vw] xl:left-[10vw] z-0 pointer-events-none opacity-20 drop-shadow-[0_0_30px_rgba(245,158,11,0.5)]"
-        style={{ y: eggY, scale: eggScale, rotate: eggRotate }}
-      >
-        <div className="w-40 h-52 bg-gradient-to-tr from-brand to-yellow-300 rounded-[50%_50%_50%_50%/60%_60%_40%_40%] blur-[2px]"></div>
-      </motion.div>
-
-
+    <ScrollBackground>
       {/* Hero Section */}
       <section className="relative min-h-[72vh] lg:min-h-[68vh] flex flex-col justify-center overflow-hidden pt-24 pb-32 lg:pt-28 lg:pb-40 bg-slate-900">
         
@@ -70,42 +38,42 @@ export default function Home() {
 
         {/* Hero Content with Glassmorphism */}
         <div className="container relative z-10 px-4 md:px-6 text-center mt-8">
-          <StaggerChildren className="max-w-5xl mx-auto space-y-6">
-            <StaggerItem>
+          <div className="max-w-5xl mx-auto space-y-6">
+            <AnimatedSection>
               <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/10 backdrop-blur-xl shadow-2xl border border-white/20 text-yellow-300 font-semibold tracking-wide text-xs sm:text-sm hover:bg-white/15 transition-all duration-300 hover:scale-105">
-                <Sun className="w-5 h-5 animate-spin-slow text-yellow-300 drop-shadow-lg" />
+                <Sun className="w-5 h-5 animate-spin-slow text-yellow-300 drop-shadow-lg" aria-hidden="true" />
                 <span className="drop-shadow-md">A New Dawn in Poultry Farming</span>
               </div>
-            </StaggerItem>
+            </AnimatedSection>
             
-            <StaggerItem>
+            <AnimatedSection delay={0.1}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-white drop-shadow-2xl leading-tight mb-4">
                 Premium Eggs, <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand via-orange-300 to-amber-200 animate-gradient-x">
                   Sustainable Future
                 </span>
               </h1>
-            </StaggerItem>
+            </AnimatedSection>
 
-            <StaggerItem>
+            <AnimatedSection delay={0.2}>
               <p className="text-base md:text-lg text-slate-100 font-medium leading-relaxed max-w-3xl mx-auto drop-shadow-lg opacity-90 mb-8">
                 Sunrise Egg Farms delivers the highest quality, farm-fresh eggs nurtured with continuous zero-waste practices and veterinary oversight.
               </p>
-            </StaggerItem>
+            </AnimatedSection>
 
-            <StaggerItem>
+            <AnimatedSection delay={0.3}>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
                 <Link href="/products" className="group w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-brand to-amber-500 hover:from-brand-dark hover:to-orange-600 text-white rounded-2xl font-semibold text-base transition-all hover:scale-105 shadow-[0_8px_30px_rgba(245,158,11,0.25)] hover:shadow-[0_8px_40px_rgba(245,158,11,0.45)] flex items-center justify-center gap-2 border border-white/20 backdrop-blur-sm">
-                  <Egg className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                  <Egg className="w-5 h-5 group-hover:rotate-12 transition-transform" aria-hidden="true" />
                   View Products
                 </Link>
                 <Link href="/exports" className="group w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-2xl font-semibold text-base transition-all hover:scale-105 flex items-center justify-center gap-2 shadow-lg border border-white/30 backdrop-blur-xl hover:border-white/50">
-                  <Globe className="w-5 h-5 group-hover:rotate-12 transition-transform" />
+                  <Globe className="w-5 h-5 group-hover:rotate-12 transition-transform" aria-hidden="true" />
                   Global Exports
                 </Link>
               </div>
-            </StaggerItem>
-          </StaggerChildren>
+            </AnimatedSection>
+          </div>
         </div>
 
         {/* Scroll indicator */}
@@ -116,7 +84,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stunning Intro Image Break */}
+      {/* Intro Image Break */}
       <section className="relative z-20 -mt-16 mb-24 container px-4 md:px-6">
         <AnimatedSection>
           <div className="w-full h-[450px] md:h-[750px] rounded-[2.5rem] overflow-hidden shadow-2xl relative border-4 border-white/40 ring-1 ring-slate-100 group bg-slate-900">
@@ -137,77 +105,10 @@ export default function Home() {
         </AnimatedSection>
       </section>
 
-      {/* Feature Cards (Modern Glassmorphism Design) */}
-      <section className="mb-12 container px-4 md:px-6 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          
-          <motion.div 
-            whileHover={{ y: -15, scale: 1.02 }}
-            className="group bg-white/80 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-white/20 relative overflow-hidden hover:bg-white/90 transition-all duration-500 hover:shadow-[0_25px_50px_-12px_rgba(245,158,11,0.25)]"
-          >
-            {/* Background gradient on hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-brand/5 to-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            
-            <div className="relative z-10">
-              <div className="w-20 h-20 bg-gradient-to-br from-brand to-amber-500 rounded-3xl flex items-center justify-center shadow-xl text-white mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 border-4 border-white/50">
-                <Award className="w-10 h-10" />
-              </div>
-              <h3 className="text-3xl font-black text-slate-900 mb-4 tracking-tight group-hover:text-brand transition-colors duration-300">Hygiene First</h3>
-              <p className="text-slate-600 text-lg leading-relaxed font-medium">
-                Continuous sanitization and 24/7 veterinary oversight ensure absolute safety and quality for every egg we produce.
-              </p>
-            </div>
-            
-            {/* Decorative element */}
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-brand/10 rounded-full blur-xl group-hover:bg-brand/20 transition-colors duration-500"></div>
-          </motion.div>
+      {/* Features Grid Component (Client) */}
+      <FeaturesGrid />
 
-          <motion.div 
-            whileHover={{ y: -15, scale: 1.02 }}
-            className="group bg-white/80 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-white/20 relative overflow-hidden hover:bg-white/90 transition-all duration-500 hover:shadow-[0_25px_50px_-12px_rgba(245,158,11,0.25)]"
-          >
-            {/* Background gradient on hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            
-            <div className="relative z-10">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-3xl flex items-center justify-center shadow-xl text-white mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 border-4 border-white/50">
-                <TrendingUp className="w-10 h-10" />
-              </div>
-              <h3 className="text-3xl font-black text-slate-900 mb-4 tracking-tight group-hover:text-green-600 transition-colors duration-300">Eco-Friendly</h3>
-              <p className="text-slate-600 text-lg leading-relaxed font-medium">
-                Zero-waste management systems and sustainable farming practices are at the heart of our operations, benefiting local ecosystems.
-              </p>
-            </div>
-            
-            {/* Decorative element */}
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-green-500/10 rounded-full blur-xl group-hover:bg-green-500/20 transition-colors duration-500"></div>
-          </motion.div>
-
-          <motion.div 
-            whileHover={{ y: -15, scale: 1.02 }}
-            className="group bg-white/80 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-white/20 relative overflow-hidden hover:bg-white/90 transition-all duration-500 hover:shadow-[0_25px_50px_-12px_rgba(245,158,11,0.25)]"
-          >
-            {/* Background gradient on hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            
-            <div className="relative z-10">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl flex items-center justify-center shadow-xl text-white mb-8 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 border-4 border-white/50">
-                <Clock className="w-10 h-10" />
-              </div>
-              <h3 className="text-3xl font-black text-slate-900 mb-4 tracking-tight group-hover:text-blue-600 transition-colors duration-300">Global Reach</h3>
-              <p className="text-slate-600 text-lg leading-relaxed font-medium">
-                Exporting premium eggs worldwide while maintaining farm-fresh quality through advanced supply chain logistics and careful packaging.
-              </p>
-            </div>
-            
-            {/* Decorative element */}
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-blue-500/10 rounded-full blur-xl group-hover:bg-blue-500/20 transition-colors duration-500"></div>
-          </motion.div>
-
-        </div>
-      </section>
-
-      {/* Interactive Process / Farm-to-Table */}
+      {/* Process Section */}
       <section className="py-16 lg:py-20 relative overflow-hidden z-10 bg-gradient-to-b from-white via-slate-50/50 to-white">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col lg:flex-row gap-16 items-center mb-24">
@@ -231,7 +132,6 @@ export default function Home() {
                 We believe that premium eggs are the result of rigorous processes. Every step, from the formulation of chicken feed to the final packaging, is meticulously monitored and automated.
               </p>
               
-              {/* Professional Editorial Process Stats */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-12 border-t border-slate-200/80 pt-10">
                 <div className="flex flex-col items-start border-l-[3px] border-amber-500 pl-5">
                   <div className="text-4xl md:text-5xl font-black text-slate-900 mb-1 drop-shadow-sm tracking-tight">24/7</div>
@@ -249,150 +149,12 @@ export default function Home() {
             </AnimatedSection>
             
             <AnimatedSection delay={0.3} className="lg:w-1/2 w-full">
-              <div className="relative h-[500px] w-full rounded-3xl overflow-hidden shadow-2xl border-4 border-white/60 bg-slate-900 group">
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent z-10 pointer-events-none"></div>
-                
-                {/* Advanced SVG Animation: Automated Egg Scanning */}
-                <div className="absolute inset-0 overflow-hidden flex items-center justify-center z-0 group-hover:scale-105 transition-transform duration-[2s]">
-                  {/* Subtle Blueprint Grid */}
-                  <div className="absolute inset-0 opacity-20 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:30px_30px]"></div>
-                  
-                  <div className="relative w-64 h-64 flex items-center justify-center -translate-y-12 perspective-1000">
-                    {/* Glowing Pedestal */}
-                    <motion.div 
-                      className="absolute bottom-0 w-40 h-10 bg-gradient-to-r from-transparent via-brand/30 to-transparent rounded-[50%] blur-md"
-                      animate={{ scale: [1, 1.25, 1], opacity: [0.4, 0.8, 0.4] }}
-                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                    />
-
-                    {/* The Premium 3D Egg SVG */}
-                    <motion.svg 
-                      width="120" 
-                      height="120" 
-                      viewBox="0 0 36 36" 
-                      className="z-10 drop-shadow-[0_10px_25px_rgba(245,158,11,0.4)] group-hover:drop-shadow-[0_15px_35px_rgba(245,158,11,0.6)] transition-all duration-700"
-                      animate={{ y: [-8, 8, -8] }}
-                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                    >
-                      <defs>
-                        {/* 3D Radial Lighting Effect */}
-                        <radialGradient id="premiumEggGrad" cx="35%" cy="30%" r="70%">
-                          <stop offset="0%" stopColor="#FFFFFF" />
-                          <stop offset="20%" stopColor="#FDE68A" />
-                          <stop offset="65%" stopColor="#D97706" />
-                          <stop offset="100%" stopColor="#78350f" />
-                        </radialGradient>
-                      </defs>
-                      {/* Mathematically Perfected Egg Path */}
-                      <path 
-                        d="M23.142 3.403C21.492 1.899 19.712 1 18 1C12.375 1 6 10.611 6 20c0 .975.079 1.899.202 2.791C7.261 30.484 12.623 35 18 35c6 0 12-5.611 12-15c0-6.531-3.086-13.161-6.858-16.597z" 
-                        fill="url(#premiumEggGrad)"
-                      />
-                    </motion.svg>
-
-                    {/* Outer Scanning Ring (Gold) */}
-                    <motion.div 
-                      className="absolute w-56 h-56 border border-brand/50 rounded-full border-t-amber-400 border-l-transparent z-20 mix-blend-screen"
-                      style={{ transformOrigin: "center center", transformStyle: "preserve-3d" }}
-                      animate={{ rotateX: [75, 75], rotateZ: [0, 360] }}
-                      transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-                    />
-                    
-                    {/* Inner Analytical Ring (Emerald) */}
-                    <motion.div 
-                      className="absolute w-44 h-44 border border-emerald-400/30 rounded-full border-b-emerald-400/80 border-r-transparent z-0 mix-blend-screen"
-                      style={{ transformOrigin: "center center", transformStyle: "preserve-3d" }}
-                      animate={{ rotateX: [70, 70], rotateZ: [360, 0] }}
-                      transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                    />
-
-                    {/* Vertical Sweeping Laser */}
-                    <motion.div 
-                      className="absolute left-1/2 -translate-x-1/2 w-48 h-0.5 bg-gradient-to-r from-transparent via-amber-400 to-transparent shadow-[0_0_20px_#F59E0B] z-30"
-                      animate={{ top: ["10%", "90%", "10%"] }}
-                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                    />
-                    
-                    {/* Floating Data Particles */}
-                    <div className="absolute inset-0 z-20">
-                      {[...Array(6)].map((_, i) => (
-                         <motion.div
-                           key={i}
-                           className="absolute rounded-sm bg-emerald-400 shadow-[0_0_5px_#34d399]"
-                           style={{
-                             width: i % 2 === 0 ? '6px' : '3px',
-                             height: i % 2 === 0 ? '2px' : '3px',
-                           }}
-                           initial={{ opacity: 0, scale: 0 }}
-                           animate={{ 
-                             opacity: [0, 1, 0], 
-                             y: [0, -30 - Math.random() * 40],
-                             x: (Math.random() - 0.5) * 80
-                           }}
-                           transition={{ 
-                             duration: 2 + Math.random() * 2, 
-                             repeat: Infinity, 
-                             delay: Math.random() * 2,
-                             ease: "easeOut"
-                           }}
-                         />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="absolute inset-x-0 bottom-0 p-8 md:p-10 lg:p-12 z-20">
-                  <h3 className="text-white text-4xl md:text-5xl font-black drop-shadow-2xl mb-4 relative">
-                    Uncompromising<br/>Quality. Daily.
-                  </h3>
-                  <p className="text-slate-200 text-lg md:text-xl font-medium drop-shadow-md max-w-md relative">
-                    Our automated systems ensure every egg meets the highest standards of quality and safety.
-                  </p>
-                </div>
-                
-                {/* Floating elements */}
-                <div className="absolute top-4 right-4 w-16 h-16 bg-brand/20 rounded-2xl flex items-center justify-center backdrop-blur-sm border border-white/20 z-20">
-                  <CheckCircle2 className="w-8 h-8 text-white" />
-                </div>
-                <div className="absolute top-8 left-8 w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center backdrop-blur-sm border border-white/20 z-20">
-                  <Leaf className="w-6 h-6 text-white" />
-                </div>
-              </div>
+              <ProcessAnimation />
             </AnimatedSection>
           </div>
 
-          <StaggerChildren className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { num: "01", icon: Leaf, title: "Premium Feed", desc: "Hens receive scientifically formulated nutrition stored in sterile warehouses.", color: "from-green-500 to-emerald-600" },
-              { num: "02", icon: ShieldCheck, title: "Automated Care", desc: "Climate control and automated water lines ensure optimal health and comfort.", color: "from-blue-500 to-indigo-600" },
-              { num: "03", icon: CheckCircle2, title: "Zero-Touch Grading", desc: "Eggs are transported via conveyors, scanned, and graded without human contact.", color: "from-purple-500 to-violet-600" },
-              { num: "04", icon: Globe, title: "Safe Export", desc: "Packaged securely for domestic wholesale and extensive global export.", color: "from-orange-500 to-red-500" }
-            ].map((step, idx) => (
-              <StaggerItem key={idx}>
-                <div className="group bg-white/60 backdrop-blur-xl rounded-3xl p-8 border border-white/40 shadow-xl hover:shadow-2xl transition-all duration-500 relative overflow-hidden h-full flex flex-col hover:bg-white/80">
-                  {/* Background Number */}
-                  <div className="absolute -right-8 -top-8 text-[8rem] font-black text-slate-50 opacity-50 group-hover:text-brand/10 group-hover:scale-110 group-hover:-translate-y-4 transition-all duration-700 pointer-events-none">
-                    {step.num}
-                  </div>
-                  
-                  <div className="relative z-10 flex-1">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${step.color} rounded-2xl flex items-center justify-center mb-6 border-4 border-white/50 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
-                      <step.icon className="w-8 h-8 text-white" />
-                    </div>
-                    <h4 className="text-2xl font-black text-slate-900 mb-4 group-hover:text-brand transition-colors duration-300">{step.title}</h4>
-                    <p className="text-slate-600 text-base leading-relaxed font-medium">
-                      {step.desc}
-                    </p>
-                  </div>
-                  
-                  {/* Progress indicator */}
-                  <div className="mt-6 w-full bg-slate-200 rounded-full h-1 overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-brand to-amber-400 rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700"></div>
-                  </div>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerChildren>
+          {/* Steps Grid Component (Client) */}
+          <StepsGrid />
         </div>
       </section>
 
@@ -409,7 +171,7 @@ export default function Home() {
 
             <div className="relative px-6 py-16 md:px-12 md:py-20 text-center">
               <div className="inline-flex items-center justify-center gap-3 px-6 py-3 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 mb-8 mx-auto">
-                <Award className="w-5 h-5 text-brand" />
+                <Award className="w-5 h-5 text-brand" aria-hidden="true" />
                 <span className="text-white font-semibold text-sm">Trusted by Global Partners</span>
               </div>
 
@@ -424,11 +186,11 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
                 <Link href="/contact" className="group inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-brand to-amber-500 px-10 py-4 text-lg font-black text-white shadow-[0_18px_40px_-20px_rgba(245,158,11,0.9)] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[0_22px_50px_-18px_rgba(245,158,11,0.9)]">
                   Get in Touch Today
-                  <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
+                  <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" aria-hidden="true" />
                 </Link>
                 <Link href="/about" className="group inline-flex items-center justify-center gap-3 rounded-full border border-white/20 bg-white/10 px-10 py-4 text-lg font-semibold text-white transition-all duration-300 hover:bg-white/20 hover:scale-105">
                   Learn More About Us
-                  <Globe className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" />
+                  <Globe className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" aria-hidden="true" />
                 </Link>
               </div>
 
@@ -452,7 +214,6 @@ export default function Home() {
 
       {/* Trust & Google Reviews Scroller */}
       <ReviewsSection />
-
-    </div>
+    </ScrollBackground>
   );
 }

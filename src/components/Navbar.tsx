@@ -76,16 +76,16 @@ export function Navbar() {
           <div className="overflow-hidden">
             <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0 py-1.5 px-4 md:px-6">
               <div className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-brand" />
+                <MapPin className="w-3.5 h-3.5 text-brand" aria-hidden="true" />
                 <span>Maddilapalem, Visakhapatnam</span>
               </div>
               <div className="flex items-center gap-4 sm:gap-6">
                 <a href="tel:+9199963755766" className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer">
-                  <Phone className="w-3.5 h-3.5 text-brand" />
+                  <Phone className="w-3.5 h-3.5 text-brand" aria-hidden="true" />
                   <span>+91 99963 755766</span>
                 </a>
                 <a href="mailto:sunriseeggfarms@gmail.com" className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer">
-                  <Mail className="w-3.5 h-3.5 text-brand" />
+                  <Mail className="w-3.5 h-3.5 text-brand" aria-hidden="true" />
                   <span className="hidden sm:inline">sunriseeggfarms@gmail.com</span>
                 </a>
               </div>
@@ -103,8 +103,13 @@ export function Navbar() {
               <div className="relative w-12 h-12 sm:w-16 sm:h-16 flex items-center justify-center transition-transform group-hover:scale-105 shrink-0">
                 <Image src="/images/logo.png" alt="Sunrise Egg Farms Logo" fill className="object-contain w-auto h-auto" priority />
               </div>
-              <div className="flex items-center justify-start ml-1 shrink-0">
-                <img src="/images/logo-text.png" alt="Sunrise Egg Farms Text" className="h-9 sm:h-10 md:h-11 w-auto object-contain object-left group-hover:opacity-90 transition-opacity" />
+              <div className="relative h-9 sm:h-10 md:h-11 w-48 sm:w-56 md:w-64 ml-1 shrink-0">
+                <Image 
+                  src="/images/logo-text.png" 
+                  alt="Sunrise Egg Farms Text Logo" 
+                  fill
+                  className="object-contain object-left group-hover:opacity-90 transition-opacity"
+                />
               </div>
             </Link>
 
@@ -120,7 +125,7 @@ export function Navbar() {
                     {hasDropdown ? (
                       <button className={`flex items-center gap-1.5 text-sm xl:text-[15px] font-bold px-3 py-2 rounded-xl transition-all ${isActive ? 'text-brand' : 'text-slate-700 hover:text-brand'}`}>
                         {link.name}
-                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180 text-brand' : 'text-slate-400'}`} />
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180 text-brand' : 'text-slate-400'}`} aria-hidden="true" />
                       </button>
                     ) : link.name === "Contact Us" ? (
                       <Link
@@ -173,7 +178,7 @@ export function Navbar() {
               onClick={() => setIsOpen(!isOpen)} 
               className="lg:hidden text-slate-800 p-2 border border-slate-200 rounded-lg bg-slate-50 hover:bg-slate-100 transition-colors pointer-events-auto z-50 relative"
             >
-               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+               {isOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
             </button>
           </div>
         </div>
@@ -192,7 +197,7 @@ export function Navbar() {
                     href={item.href}
                     className={`flex flex-col items-center justify-center gap-1 rounded-2xl sm:rounded-3xl w-full py-2 px-1 text-center transition-all duration-200 ${isActive ? "bg-white/10 text-white" : "text-slate-300 hover:bg-white/10 hover:text-white"}`}
                   >
-                    <Icon className="w-5 h-5 sm:w-5 sm:h-5" />
+                    <Icon className="w-5 h-5 sm:w-5 sm:h-5" aria-hidden="true" />
                     <span className="text-[10px] sm:text-[11px] font-semibold leading-none truncate w-full px-0.5">{item.name}</span>
                   </Link>
                 </li>

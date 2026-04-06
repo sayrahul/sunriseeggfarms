@@ -16,8 +16,36 @@ const merriweather = Merriweather({
 });
 
 export const metadata: Metadata = {
-  title: "Sunrise Egg Farms",
-  description: "Sunrise Egg Farms - Providing premium, hygienic, and nutritious eggs with sustainable practices from Visakhapatnam to the world.",
+  title: "Sunrise Egg Farms | Premium Hygienic Eggs & Global Exports",
+  description: "Sunrise Egg Farms - Providing premium, hygienic, and nutritious eggs with sustainable practices. Leading exporter of farm-fresh eggs from Visakhapatnam to the world.",
+  keywords: ["Egg Farms", "Premium Eggs", "Hygienic Eggs", "Egg Exports India", "Sustainable Poultry", "Visakhapatnam Egg Farm"],
+  authors: [{ name: "Sunrise Egg Farms" }],
+  metadataBase: new URL("https://www.sunriseeggfarms.com"),
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Sunrise Egg Farms | Premium Hygienic Eggs & Global Exports",
+    description: "High-quality, farm-fresh eggs nurtured with continuous zero-waste practices and veterinary oversight.",
+    url: "https://www.sunriseeggfarms.com",
+    siteName: "Sunrise Egg Farms",
+    images: [
+      {
+        url: "/images/og-image.png", // We should create this or use a high-quality farm shot
+        width: 1200,
+        height: 630,
+        alt: "Sunrise Egg Farms - Premium Hatchery and Exports",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sunrise Egg Farms | Premium Hygienic Eggs & Global Exports",
+    description: "Export-grade hygienic eggs with zero-waste farming practices.",
+    images: ["/images/og-image.png"],
+  },
   icons: {
     icon: "/favicon.png",
   },

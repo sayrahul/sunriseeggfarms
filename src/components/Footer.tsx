@@ -14,8 +14,13 @@ export function Footer() {
               <div className="relative w-12 h-12 flex items-center justify-center bg-transparent shrink-0">
                 <Image src="/images/logo.png" alt="Sunrise Egg Farms" width={40} height={40} className="object-contain w-auto h-auto" />
               </div>
-              <div className="flex items-center justify-start border-l border-slate-200 pl-3 shrink-0">
-                <img src="/images/logo-text.png" alt="Sunrise Egg Farms Text Logo" className="h-5 md:h-6 w-auto object-contain object-left" />
+              <div className="relative h-5 md:h-6 w-32 border-l border-slate-200 pl-3 shrink-0">
+                <Image 
+                  src="/images/logo-text.png" 
+                  alt="Sunrise Egg Farms Text Logo" 
+                  fill
+                  className="object-contain object-left" 
+                />
               </div>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed max-w-sm">
@@ -25,7 +30,7 @@ export function Footer() {
             {/* Social proof */}
             <div className="flex items-center gap-4 pt-4">
               <div className="flex items-center gap-2 text-slate-400 text-sm">
-                <Award className="w-4 h-4 text-brand" />
+                <Award className="w-4 h-4 text-brand" aria-hidden="true" />
                 <span>ISO 22000 Certified</span>
               </div>
             </div>
@@ -57,17 +62,17 @@ export function Footer() {
             <h4 className="font-bold mb-6 text-lg">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-slate-400 text-sm">
-                <MapPin className="w-5 h-5 text-brand shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-brand shrink-0 mt-0.5" aria-hidden="true" />
                 <span># 53-17-43/1, Rajanna Reddy Street, Behind Automotives,
                   Maddilapalem, Visakhapatnam - 530013.
                 </span>
               </li>
               <li className="flex items-center gap-3 text-slate-400 text-sm">
-                <Phone className="w-5 h-5 text-brand shrink-0" />
+                <Phone className="w-5 h-5 text-brand shrink-0" aria-hidden="true" />
                 <span>+91 99963 755766 (Sales) | +91 7989702164 (International)</span>
               </li>
               <li className="flex items-center gap-3 text-slate-400 text-sm">
-                <Mail className="w-5 h-5 text-brand shrink-0" />
+                <Mail className="w-5 h-5 text-brand shrink-0" aria-hidden="true" />
                 <span>sunriseeggfarms@gmail.com</span>
               </li>
             </ul>
