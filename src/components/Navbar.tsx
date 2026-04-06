@@ -69,24 +69,32 @@ export function Navbar() {
     <>
       <header className="fixed inset-x-0 top-0 z-50 flex flex-col bg-transparent pointer-events-none">
         
-        {/* Top Information Strip */}
+        {/* Top Information Strip - Elite Overhaul */}
         <div 
-          className={`grid transition-[grid-template-rows,opacity] duration-300 origin-top pointer-events-auto bg-slate-900 text-slate-300 text-xs md:text-sm font-medium border-slate-800/20 ${scrolled ? "grid-rows-[0fr] opacity-0 pointer-events-none border-b-0" : "grid-rows-[1fr] opacity-100 border-b"}`}
+          className={`grid transition-[grid-template-rows,opacity] duration-300 origin-top pointer-events-auto bg-slate-900 text-slate-300 text-[10px] sm:text-xs md:text-sm font-medium border-slate-800/20 ${scrolled ? "grid-rows-[0fr] opacity-0 pointer-events-none border-b-0" : "grid-rows-[1fr] opacity-100 border-b"}`}
         >
           <div className="overflow-hidden">
-            <div className="container mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0 py-1.5 px-4 md:px-6">
-              <div className="flex items-center gap-2">
-                <MapPin className="w-3.5 h-3.5 text-brand" aria-hidden="true" />
-                <span>Maddilapalem, Visakhapatnam</span>
-              </div>
+            <div className="container mx-auto flex flex-col items-center sm:flex-row sm:justify-between py-2 px-4 md:px-6 gap-1 sm:gap-0">
+              {/* Location - Clickable */}
+              <a 
+                href="https://maps.app.goo.gl/AXbukKBJuAyRnhLPA" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 hover:text-brand transition-colors group"
+              >
+                <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-brand group-hover:scale-110 transition-transform" aria-hidden="true" />
+                <span className="truncate max-w-[280px] sm:max-w-none">Maddilapalem, Visakhapatnam</span>
+              </a>
+
+              {/* Contacts Row */}
               <div className="flex items-center gap-4 sm:gap-6">
-                <a href="tel:+9199963755766" className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer">
-                  <Phone className="w-3.5 h-3.5 text-brand" aria-hidden="true" />
+                <a href="tel:+9199963755766" className="flex items-center gap-1.5 hover:text-white transition-colors group">
+                  <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-brand group-hover:rotate-12 transition-transform" aria-hidden="true" />
                   <span>+91 99963 755766</span>
                 </a>
-                <a href="mailto:sunriseeggfarms@gmail.com" className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer">
-                  <Mail className="w-3.5 h-3.5 text-brand" aria-hidden="true" />
-                  <span className="hidden sm:inline">sunriseeggfarms@gmail.com</span>
+                <a href="mailto:sunriseeggfarms@gmail.com" className="flex items-center gap-1.5 hover:text-white transition-colors group">
+                  <Mail className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-brand group-hover:-translate-y-0.5 transition-transform" aria-hidden="true" />
+                  <span className="inline">sunriseeggfarms@gmail.com</span>
                 </a>
               </div>
             </div>
@@ -143,7 +151,6 @@ export function Navbar() {
                       </Link>
                     )}
 
-                    {/* Desktop Dropdown Panel */}
                     <AnimatePresence>
                       {hasDropdown && isDropdownOpen && (
                         <motion.div
@@ -184,21 +191,34 @@ export function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Bottom Navigation Bar */}
-      <div className="fixed inset-x-0 bottom-0 z-40 lg:hidden bg-slate-950/95 border-t border-slate-200/10 backdrop-blur-xl shadow-[0_-18px_40px_-20px_rgba(15,23,42,0.45)] pb-safe">
-        <nav className="w-full px-1 py-2 sm:px-2 max-w-full">
-          <ul className="flex items-center justify-between w-full gap-1 sm:gap-2">
+      {/* Mobile Bottom Navigation Bar - Sliding Pill Redesign */}
+      <div className="fixed inset-x-4 bottom-6 z-40 lg:hidden px-2 py-3 bg-slate-900/90 border border-white/5 backdrop-blur-2xl rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.3)]">
+        <nav className="relative">
+          <ul className="flex items-center justify-around relative">
             {mobileBottomLinks.map((item) => {
-              const isActive = pathname === item.href || (item.href.startsWith('#') && false); 
+              const isActive = pathname === item.href; 
               const Icon = item.Icon;
               return (
-                <li key={item.name} className="flex-1 flex justify-center">
+                <li key={item.name} className="relative flex-1 z-10">
                   <Link
                     href={item.href}
-                    className={`flex flex-col items-center justify-center gap-1 rounded-2xl sm:rounded-3xl w-full py-2 px-1 text-center transition-all duration-200 ${isActive ? "bg-white/10 text-white" : "text-slate-300 hover:bg-white/10 hover:text-white"}`}
+                    className={`flex flex-col items-center justify-center gap-1.5 py-1 px-1 text-center transition-all duration-300 ${isActive ? "text-brand" : "text-slate-400 hover:text-white"}`}
                   >
-                    <Icon className="w-5 h-5 sm:w-5 sm:h-5" aria-hidden="true" />
-                    <span className="text-[10px] sm:text-[11px] font-semibold leading-none truncate w-full px-0.5">{item.name}</span>
+                    <motion.div 
+                      className="flex flex-col items-center justify-center gap-1.5 transition-colors duration-300"
+                      whileTap={{ scale: 0.9 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
+                      <div className="relative">
+                        <Icon 
+                          className={`w-5 h-5 transition-all duration-300 ${isActive ? "scale-110 drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]" : ""}`} 
+                          aria-hidden="true" 
+                        />
+                      </div>
+                      <span className={`text-[10px] font-bold tracking-wide transition-all duration-300 ${isActive ? "opacity-100" : "opacity-70"}`}>
+                        {item.name}
+                      </span>
+                    </motion.div>
                   </Link>
                 </li>
               );
@@ -207,7 +227,6 @@ export function Navbar() {
         </nav>
       </div>
 
-      {/* Full screen mobile menu with Accordions */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -227,7 +246,6 @@ export function Navbar() {
   );
 }
 
-// Sub-component for Mobile Accordions
 function MobileAccordionItem({ link, setIsOpen, pathname }: { link: any, setIsOpen: (v: boolean) => void, pathname: string }) {
   const [open, setOpen] = useState(false);
   const hasDropdown = !!link.dropdown;

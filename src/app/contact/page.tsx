@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
@@ -23,18 +24,23 @@ export default function Contact() {
         {/* Contact Information */}
         <AnimatedSection className="lg:col-span-2 space-y-8">
           <div className="bg-slate-900 text-white p-8 rounded-3xl shadow-xl border border-slate-800">
-            <h2 className="text-2xl font-bold mb-8 text-egg">Headquarters</h2>
+            <h2 className="text-2xl font-bold mb-8 text-brand">Headquarters</h2>
             
             <div className="space-y-6">
               <div className="flex items-start gap-4">
                 <MapPin className="w-6 h-6 text-brand shrink-0 mt-1" aria-hidden="true" />
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Address</h3>
-                  <p className="text-slate-400 leading-relaxed text-sm">
+                  <a 
+                    href="https://maps.app.goo.gl/AXbukKBJuAyRnhLPA" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-slate-400 hover:text-brand transition-colors text-sm leading-relaxed"
+                  >
                     # 53-17-43/1, Rajanna Reddy Street,<br />
                     Behind Automotives, Maddilapalem,<br />
                     Visakhapatnam - 530013.
-                  </p>
+                  </a>
                 </div>
               </div>
 
@@ -42,9 +48,14 @@ export default function Contact() {
                 <Phone className="w-6 h-6 text-brand shrink-0 mt-1" aria-hidden="true" />
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Phone</h3>
-                  <p className="text-slate-400 text-sm">
-                    Directors / Office: <a href="tel:+917989702164" className="hover:text-brand transition-colors">+91 7989702164</a>
-                  </p>
+                  <div className="space-y-1">
+                    <p className="text-slate-400 text-sm">
+                      Sales: <a href="tel:+9199963755766" className="hover:text-brand transition-colors font-bold">+91 99963 755766</a>
+                    </p>
+                    <p className="text-slate-400 text-sm">
+                      Exports: <a href="tel:+917989702164" className="hover:text-brand transition-colors font-bold">+91 7989702164</a>
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -52,12 +63,12 @@ export default function Contact() {
                 <Mail className="w-6 h-6 text-brand shrink-0 mt-1" aria-hidden="true" />
                 <div>
                   <h3 className="font-semibold text-lg mb-1">Email / Web</h3>
-                  <a href="mailto:sunriseeggfarms@gmail.com" className="block text-slate-400 hover:text-brand transition-colors text-sm mb-1">
+                  <a href="mailto:sunriseeggfarms@gmail.com" className="block text-slate-400 hover:text-brand transition-colors text-sm mb-1 font-bold">
                     sunriseeggfarms@gmail.com
                   </a>
-                  <a href="https://www.sunriseeggfarms.com" target="_blank" rel="noopener noreferrer" className="block text-slate-400 hover:text-brand transition-colors text-sm">
+                  <Link href="/" className="block text-slate-400 hover:text-brand transition-colors text-sm uppercase tracking-wider font-bold">
                     www.sunriseeggfarms.com
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
