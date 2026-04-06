@@ -21,7 +21,7 @@ export default function Gallery() {
   return (
     <div className="py-24 max-w-7xl mx-auto px-4 md:px-6">
       <AnimatedSection className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-dark mb-6">Farm <span className="text-brand">Gallery</span></h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">Farm <span className="text-brand">Gallery</span></h1>
         <p className="text-lg text-slate-600 max-w-2xl mx-auto">
           Take a visual tour of our sprawling facilities, advanced automation, and the daily life at Sunrise Egg Farms.
         </p>

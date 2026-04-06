@@ -7,7 +7,7 @@ export default function Sustainability() {
   return (
     <div className="py-24 max-w-6xl mx-auto px-4 md:px-6">
       <AnimatedSection className="text-center mb-16 max-w-3xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-dark mb-6">Sustainable <span className="text-brand">Farming</span></h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">Sustainable <span className="text-brand">Farming</span></h1>
         <p className="text-lg text-slate-600">
           Our commitment extends beyond quality eggs. We operate on a strict zero-waste policy, transforming every byproduct into valuable agricultural resources.
         </p>
@@ -26,7 +26,7 @@ export default function Sustainability() {
                 <Recycle className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-slate-dark mb-2">Zero-Waste Management</h3>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Zero-Waste Management</h3>
                 <p className="text-slate-600 leading-relaxed">
                   All poultry waste is systematically collected, treated, and converted into high-grade organic fertilizer used by local farmers to enrich soil quality.
                 </p>
@@ -40,7 +40,7 @@ export default function Sustainability() {
                 <SunIcon className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-slate-dark mb-2">Renewable Energy</h3>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Renewable Energy</h3>
                 <p className="text-slate-600 leading-relaxed">
                   Our facilities are heavily supplemented by solar power installations, reducing our carbon footprint and driving energy independence.
                 </p>
@@ -54,7 +54,7 @@ export default function Sustainability() {
                 <Droplets className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-slate-dark mb-2">Water Conservation</h3>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Water Conservation</h3>
                 <p className="text-slate-600 leading-relaxed">
                   Advanced multi-stage water filtration and recycling ensure that water used for cleaning is purified and reused safely, minimizing water waste.
                 </p>

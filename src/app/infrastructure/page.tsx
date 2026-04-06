@@ -14,7 +14,7 @@ export default function Infrastructure() {
   return (
     <div className="py-24 max-w-6xl mx-auto px-4 md:px-6">
       <AnimatedSection className="text-center mb-24">
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-dark mb-6">Massive <span className="text-brand">Infrastructure</span></h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">Massive <span className="text-brand">Infrastructure</span></h1>
         <p className="text-lg text-slate-600 max-w-3xl mx-auto">
           Scale meets precision in our state-of-the-art facilities designed for maximum efficiency and animal welfare.
         </p>
@@ -30,7 +30,7 @@ export default function Infrastructure() {
                 <div className="w-16 h-16 bg-egg text-brand rounded-2xl flex items-center justify-center mb-4 shadow-sm group-hover:scale-110 transition-transform">
                   <item.icon className="w-8 h-8" />
                 </div>
-                <h2 className="text-2xl font-bold text-slate-dark mb-3">{item.title}</h2>
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">{item.title}</h2>
                 <p className="text-slate-600 leading-relaxed max-w-md">{item.desc}</p>
               </div>
 

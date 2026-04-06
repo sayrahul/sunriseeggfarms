@@ -14,7 +14,7 @@ export default function Quality() {
   return (
     <div className="py-24 max-w-7xl mx-auto px-4 md:px-6">
       <AnimatedSection className="text-center mb-16 max-w-3xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-dark mb-6">Quality & <span className="text-brand">Hygiene</span></h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6">Quality & <span className="text-brand">Hygiene</span></h1>
         <p className="text-lg text-slate-600">
           We don&apos;t compromise. Our strict biosecurity measures and continuous sanitization protocols guarantee an unconditionally safe environment.
         </p>
@@ -27,7 +27,7 @@ export default function Quality() {
               <div className="w-16 h-16 bg-egg rounded-full flex items-center justify-center text-brand mb-6">
                 <step.icon className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold text-slate-dark mb-3">{step.title}</h3>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{step.title}</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
                 {step.desc}
               </p>

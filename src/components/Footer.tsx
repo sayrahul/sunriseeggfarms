@@ -81,9 +81,9 @@ export function Footer() {
               © 2026 Sunrise Egg Farms. All Rights Reserved.
             </div>
             <div className="flex items-center gap-6 text-sm">
-              <Link href="#" className="text-slate-400 hover:text-brand transition-colors font-medium">Privacy Policy</Link>
-              <Link href="#" className="text-slate-400 hover:text-brand transition-colors font-medium">Terms and Conditions</Link>
-              <Link href="#" className="text-slate-400 hover:text-brand transition-colors font-medium">Sitemap</Link>
+              <Link href="/privacy" className="text-slate-400 hover:text-brand transition-colors font-medium">Privacy Policy</Link>
+              <Link href="/terms" className="text-slate-400 hover:text-brand transition-colors font-medium">Terms and Conditions</Link>
+              <Link href="/sitemap" className="text-slate-400 hover:text-brand transition-colors font-medium">Sitemap</Link>
             </div>
           </div>
 
